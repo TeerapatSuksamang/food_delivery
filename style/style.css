@@ -1,0 +1,214 @@
+@font-face {
+    font-family: "Kanit";
+    src: url("../font/Kanit-Light.ttf") format("truetype");
+}
+
+*{
+    font-family: "Kanit";
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* กรอบรูปวงกลลมที่อยู่บน navbar */
+.pro-brand{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 1rem 0 0;
+}
+
+/* รูปภาพ ให้ขยายเต็มกรอบ และให้แสดงตรงกึ่งกลางเป็นหลัก */
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    background-color: #fff;
+}
+
+/* กรอบทีใส่รูป เพื่อให้ขยายเมื่อ hover { */
+.hover-img{
+    overflow: hidden;
+}
+.hover-img img{
+    transition: all .5s;
+}
+.hover-img:hover img{
+    transform: scale(1.05);
+}
+/* } */
+
+/* (แสดงประเภทร้านที่หน้าหลักของ user | user/index.php ) */
+.link-img{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+/* ให้แสดงในบรรทัดเดียว และเมื่อเกินออกนอกกรอบ จะให้เลื่อนซ้ายขวาได้ */
+.scroll{
+    overflow-x: scroll;
+    display: flex;
+}
+
+/* ซ่อนแถบ scroll */
+.scroll::-webkit-scrollbar{
+    height: 0;
+}
+
+/* รูปภาพ banner ที่ใช้ใน user/see_res.php */
+.banner{
+    width: 100%;
+    height: 60vh;
+    border-radius: 0 0 150px;
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* ปุ่มดาว ลบเงาออก เพราะปุ่มนี้ใช้คลาส btn ของbootstrap ด้วย 
+    ใช้ในหน้า user/status.php โค้ดที่ใช้คลาสนี้อยู่หน้า template/status.php */
+.star-btn:active{
+    box-shadow: none !important;
+}
+
+.box *{
+    display: inline-block;
+}
+
+/* ------------ Carousel ------------ */
+/* carousel ที่ใช้ในหน้าแรกของเว็บ index.php สูงเต็มจอ และให้แสดงรูปพื้นหลังแบบอยู่กึ่งกลาง */
+.carousel-item{
+    height: 100vh;
+    object-fit: cover;
+    object-position: center center;
+    background-size: cover;
+}
+
+.bg-img-1{
+    background-image: url("../img/b1.jpg");
+}
+
+.bg-img-2{
+    background-image: url("../img/b2.jpg");
+}
+
+.bg-img-3{
+    background-image: url("../img/b3.jpg");
+}
+
+/* สีดำโปร่งใสที่มาทับรูปพื้นหลังใน carousel อีกที โดยให้ไล่สีจากดำไปขาวเริ่มทางขวา */
+.dark-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.700), rgba(255, 255, 255, 0.11));
+    z-index: 1;
+}
+
+/* ------------ alert toasts (นำ toasts จาก bootstrap มาปรับใช้) ------------ */
+/* แสดงทับทุกอย่างบนหน้าเว็บ อยู่กลางจอ และเริ่มต้นซ่อนอยู่ด้านบนจอ */
+.we-toast{
+    z-index: 9999 !important;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: toast 4s ease forwards .3s;
+}
+@keyframes toast {
+    0%{
+        top: -50%;
+    }
+    10%{
+        top: 13%;
+    }
+    13%{
+        top: 10%;
+    }
+    87%{
+        top: 10%;
+    }
+    90%{
+        top: 13%;
+    }
+    100%{
+        top: -50%;
+    }
+}
+
+/* เมื่อกดปิด js จะเพิ่มคลาสนี้แล้วจะเล่นอนิเมชั่น เด้งกลับขึ้นไป */
+.we-hide{
+    opacity: 1;
+    animation: hide .3s ease forwards;
+}
+@keyframes hide {
+    0%{
+        top: 10%;
+    }
+    50%{
+        top: 13%;
+    }
+    100%{
+        top: -50%;
+    }
+}
+
+/* กรอบเส้นนับเวลา */
+.timer-container{
+    width: 100%;
+    height: 3px;
+}
+
+/* เส้นเวลาที่วิ่งถอยหลัง */
+.timer{
+    width: 100%;
+    height: 100%;
+    background-color: #4caf50;
+    animation: time 3.5s linear forwards .3s;
+}
+@keyframes time {
+    to{
+        width: 0%;
+    }
+}
+
+/* ------------ favorite button ------------ */
+.fav{
+    color: white;
+    text-shadow: 1px 2px 5px #000;
+    transition: all .3s;
+}
+
+.fav:hover{
+    transform: scale(1.05) !important;
+    color: white;
+}
+
+
+/* ------------ Sold out (สินค้าที่ขายหมด ที่แสดงหน้า user/see_res.php) ------------ */
+.out{
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    text-align: center;
+    background-color: #33333398;
+    color: #fff;
+    z-index: 999 !important;
+    border-radius: 5px;
+}
+
+.out i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+}

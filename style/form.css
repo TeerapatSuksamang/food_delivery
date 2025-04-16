@@ -1,0 +1,11 @@
+/* เข้าถึง input ที่มีคลาสนี้ทั้งหมด ยกเว้น input file (ที่ใส่ important ให้ทุกอันเพราะเป็นการแก้ style ของ bootstrap) */
+.form-control:not([type=file]){
+    border: 1px !important;
+    border-style: none none solid none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+}
+
+.form-control:focus{
+    box-shadow: none !important;
+}
