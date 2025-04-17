@@ -3,10 +3,10 @@
     include_once 'nav.php';
     require_once __DIR__ . '/vendor/autoload.php';
 
-    // สร้าง PDF โดยใช้ฟอนต์ Sarabun และกำหนดขนาดตัวอักษรเริ่มต้น
+    // สร้าง PDF โดยใช้ฟอนต์ THSarabunNew และกำหนดขนาดตัวอักษรเริ่มต้น
     $mpdf = new \Mpdf\Mpdf([
         'default_font_size' => '18',
-        'default_font' => 'sarabun'
+        'default_font' => 'THSarabunNew'
     ]);
 
     echo "<h1 class='text-center mt-5'>ใบเสร็จ</h1>";
