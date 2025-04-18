@@ -6,12 +6,8 @@
     // ini_set('display_erros', 0);
     // error_reporting(0);
 
-    // * เปลี่ยนระหว่าง localhost กับบน server อัตโนมัติ 
-    if($_SERVER["SERVER_NAME"] == 'localhost'){
-        $conn = mysqli_connect('localhost', 'root', '', 'atc_deli') or die(mysqli_connect_error());
-    } else {
-        $conn = mysqli_connect('localhost', 'ietdevco_krujune', 'qwerty', 'ietdevco_krujune') or die(mysqli_connect_error());
-    }
+    $conn = mysqli_connect('localhost', 'root', '', 'atc_deli') or die(mysqli_connect_error());
+    
     
     // ดึงชื่อเว็บและรูปโลโก้จากตาราง admin คนแรกคนเดียว
     $web = mysqli_query($conn, "SELECT `web_name`,`logo` FROM `admin` ORDER BY `admin_id` ASC LIMIT 1 ");
